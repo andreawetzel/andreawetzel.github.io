@@ -1,0 +1,74 @@
+//Base Variables
+//--------------------------------------------------
+$base-font-size: 1.3em;
+$base-font-size-mobile: 1.1em;
+$base-line-height: 1.5em;
+$base-margin-bottom: 1em;
+
+//Color Variables
+//--------------------------------------------------
+$color-primary: #458599;
+$color-base-text: #444;
+$color-white: #FFF;
+$color-dark-grey: #444;
+$color-light-grey: #EAEAEA;
+
+$color-highlight: $color-light-grey;
+$color-link: $color-primary;
+$color-link-hover: darken($color-primary, 20%);
+$color-light-link: $color-white;
+$color-link-bg: $color-highlight;
+
+//Media Queries
+//--------------------------------------------------
+$media-small: 'min-width: 560px';
+$media-medium: 'min-width: 700px';
+$media-large: 'min-width: 900px';
+$media-large-container: 880px;
+
+
+
+//Font Variables
+//--------------------------------------------------
+$font-sans: Arial, Helvetica, sans-serif;
+$font-serif: Georgia, "Times New Roman", Times, serif;
+$h1-size: 2.6em;
+$h2-size: 2em;
+$h3-size: 1.8em;
+$h4-size: 1.5em;
+$h5-size: $h4-size;
+
+
+//Mixin: Background colors for classes with color variable names
+//--------------------------------------------------
+@mixin bg_color($color-name, $color) {
+.#{$color-name }{ background: $color;
+    @if (lightness($color) < 60)
+        { color: $color-light-link;} @else {
+            color: $color-base-text;}
+    }
+}
+
+@mixin btn_color ($btn-name, $color) {
+.#{$btn-name }{ background: $color;
+    border: solid darken($color, 10%);
+    border-width: 1px 1px 3px 1px;
+    border-width: 1px 1px 3px 1px;
+
+    @if (lightness($color) > 60)
+        { color: $color-base-text;} @else {
+            color: $color-light-link;}
+    }
+}
+
+
+
+//Imports
+//--------------------------------------------------
+
+@import "_reset.scss";
+@import "_typography.scss";
+@import "_button.scss";
+@import "_table.scss";
+
+@import "_accessibility-print.scss" //This should be last
