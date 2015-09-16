@@ -1,3 +1,8 @@
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px; }
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
